@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CreateUser;
 use App\Models\Orders;
 use App\Models\Tovar;
 use Illuminate\Http\Request;
@@ -11,10 +12,10 @@ class OrdersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Orders $orders)
+    public function index(Orders $orders, CreateUser $user)
     {
         $orders = Orders::where('status','новый')->get();
-        return view('orders.order-all', compact('orders'));
+        return view('orders.order-all', compact('orders','user'));
     }
 
     /**
@@ -30,11 +31,6 @@ class OrdersController extends Controller
      */
     public function store(Request $request, Tovar $tovar)
     {
-        $price = $tovar->price;
-
-        $quantity = $request->input('quantity');
-
-        $totalPrice = $price * $quantity;
         
         $order = $request->validate([
             'tovar_name'=>'required',
@@ -42,11 +38,22 @@ class OrdersController extends Controller
             'quantity'=>'required',
             'price'=>'required',
             'status'=>'required',
-            'comment'=>'required'
+            'comment'=>'required',
         ]);
 
+        $totalPrice = floatval($order['price']) * intval($order['quantity']);
 
-        Orders::create($request->all());
+                $orderAll=[
+            'tovar_name'=>$order['tovar_name'],
+            'FIO'=>$order['FIO'],
+            'quantity'=>$order['quantity'],
+            'price'=>$order['price'],
+            'status'=>$order['status'],
+            'comment'=>$order['comment'],
+            'total_price'=>$totalPrice
+        ];
+
+        Orders::create($orderAll);
 
         return redirect()->route('tovar-show', compact('tovar'));
     }

@@ -10,7 +10,7 @@ class Orders extends Model
 {
     use HasFactory;
 
-    protected $fillable=['tovar_name','FIO','quantity','price', 'status', 'comment'];
+    protected $fillable=['tovar_name','FIO','quantity','price', 'status', 'comment', 'total_price'];
 
     public function tovar():BelongsToMany
     {

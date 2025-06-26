@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-" rel="stylesheet">
+    <meta name="description" content="Tailwind-Laravel project">
+    <meta name="keywords" content="tailwind, php_laravel">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Document</title>
     <style>
     li {
@@ -29,7 +27,23 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         background-attachment: fixed;
     }
 
-    .swiper {}
+    .slide {
+        flex: 1;
+        transition: all 1s ease-in-out;
+    }
+
+    .slide h3 {
+        opacity: 0;
+    }
+
+    .slide.active {
+        flex: 10;
+    }
+
+    .slide.active h3 {
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.4s;
+    }
     </style>
 </head>
 
@@ -40,11 +54,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             <section id="mySlider" class="splide" aria-label="Splide Basic HTML Example">
                 <div class="splide__track container mx-auto">
                     <ul class="splide__list">
-                        <li class="splide__slide mx-auto h-168 color-white items-center">
-                            <h1 class="font-bold text-8xl leading-24 text-white flex justify-center mt-50">
-                                КОКА-КОЛА ОНЛАЙН
+                        <li class="splide__slide mx-auto h-168 color-white items-center text-center">
+                            <h1 class="font-serif font-bold text-8xl leading-24 text-white flex justify-center mt-50">
+                                ТЕСТ-SHOP
                             </h1>
-                            <p class="text-white flex justify-center mt-25">Приобретайте напитки в новом стиле, не
+                            <p class="font-serif text-white flex justify-center mt-25">Приобретайте напитки в новом
+                                стиле, не
                                 выходя из
                                 дома.</p>
                         </li>
@@ -58,6 +73,32 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
             </section>
         </section>
+        <section class="carusel-card">
+            <h2 class="text-2xl ml-12">Популярное:</h2>
+            <div class="container mx-auto flex-wrap h-102 flex justify-center items-center w-full pl-5 pr-5">
+                <div class="slide border-1 active h-80 rounded-2xl m-3 cursor-pointer relative"
+                    style="background-size:cover; background-position:center; background-repeat: no-repeat; background-image: url('https://plus.unsplash.com/premium_photo-1680112806039-244731d88d45?q=80&w=2225&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <h3 class="text-white absolute size-6 bottom-5 left-5 m-0">Test</h3>
+                </div>
+                <div class="slide border-1 h-80 rounded-2xl m-3 cursor-pointer relative"
+                    style="background-size:cover; background-position:center; background-repeat: no-repeat; background-image: url('https://plus.unsplash.com/premium_photo-1668046490168-d00204a33f89?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <h3 class="text-white absolute size-6 bottom-5 left-5 m-0">Test</h3>
+                </div>
+                <div class="slide border-1 h-80 rounded-2xl m-3 cursor-pointer relative"
+                    style="background-size:cover; background-position:center; background-repeat: no-repeat; background-image: url('https://plus.unsplash.com/premium_photo-1676524105437-7e6d524eb789?q=80&w=2192&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <h3 class="text-white absolute size-6 bottom-5 left-5 m-0">Test</h3>
+                </div>
+                <div class="slide border-1 h-80 rounded-2xl m-3 cursor-pointer relative"
+                    style="background-size:cover; background-position:center; background-repeat: no-repeat; background-image: url('https://plus.unsplash.com/premium_photo-1678402545328-24b2e9ab17b9?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <h3 class="text-white absolute size-6 bottom-5 left-5 m-0">Test</h3>
+                </div>
+                <div class="slide border-1 h-80 rounded-2xl m-3 cursor-pointer relative"
+                    style="background-size:cover; background-position:center; background-repeat: no-repeat; background-image: url('https://plus.unsplash.com/premium_photo-1681344931997-da8e6c531a0a?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <h3 class="text-white absolute size-6 bottom-5 left-5 m-0">Test</h3>
+                </div>
+            </div>
+        </section>
+
         <section class="hero">
             <div class="container mx-auto">
                 <div class="flex flex-wrap">
@@ -66,9 +107,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                         src="https://static.tildacdn.com/tild3438-3565-4363-b832-613365343262/nastuhabootalebi2848.jpg"
                         width="434" height="289">
                     <div class="ml-5 grid items-center mx-auto">
-                        <h1 class="font-light text-4xl leading-12 text-emerald-600">ДОБАВЬТЕ <br> ИЗЫСКАННОСТИ <br>
+                        <h2 class="font-light text-4xl leading-12 text-emerald-600">ДОБАВЬТЕ <br> ИЗЫСКАННОСТИ <br>
                             В
-                            СВОЙ ИНТЕРЬЕР</h1>
+                            СВОЙ ИНТЕРЬЕР</h2>
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="25px" height="25px"
                                 viewBox="0 0 24 24">
@@ -93,44 +134,58 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                 приобретения товаров.
                             </p>
                         </div>
+                        @if(isset($_COOKIE['user_id']))
                         <div class="flex justify-center mt-5">
-                            <button type="submit" class="bg-emerald-700 text-white w-60 h-10">ПЕРЕЙТИ К
-                                КАТАЛОГУ</button>
+                            <a class="" href="/tovar-all"><button type="submit"
+                                    class="cursor-pointer bg-emerald-700 text-white w-60 h-10">ПЕРЕЙТИ К
+                                    КАТАЛОГУ</button></a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="cards mt-32 mb-32">
             <div class="container mx-auto ">
                 <div class="flex justify-between">
                     <h1 class="text-4xl">Товары:</h1>
+                    @if(isset($_COOKIE['user_id']))
                     <a class="text-2xl" href="/tovar-all">Все товары</a>
+                    @endif
                 </div>
                 <br>
                 <div class="flex flex-wrap justify-start gap-7">
                     @foreach ($tovars as $el)
                     <div class="card mb-5">
-                        <img class="w-82 h-80 " src="{{ $el->img }}" alt="">
+                        <img class="w-82 h-80 " src="{{ asset('storage/'.$el->img) }}" alt="">
                         <h1 class="w-82 font-medium text-3xl leading-12">{{ $el->name }}</h1>
                         <p>{{ $el->categories }}</p>
                         <p class="w-82">{{ $el->description }}</p>
                         <p>Цена: {{ $el->price }}</p>
+                        @if(isset($_COOKIE['user_id']))
+
                         <button
-                            class="w-32 h-11 mt-5 pl-8 pr-8 bg-[#eb623c] text-white font-semibold rounded-md">Купить</button>
+                            class="cursor-pointer w-32 h-11 mt-5 pl-5 pr-8 bg-[#eb623c] text-white font-bold rounded-md"><a
+                                href="{{ route('tovar-show', $el) }}">Подробнее</a></button>
+                        <!-- <button
+                            class="cursor-pointer w-32 h-11 mt-5 pl-5 pr-8 bg-[#eb623c] text-white font-bold rounded-md"><a
+                                href="{{ route('stripe.store') }}">Купить</a></button> -->
+                        @endif
                     </div>
                     @endforeach
 
                 </div>
             </div>
         </section>
+
         <section class="o nas mt-32 mb-32">
             <div class="container mx-auto">
                 <div
                     class="bg-[url(https://static.tildacdn.com/tild3438-3565-4363-b832-613365343262/nastuhabootalebi2848.jpg)] bg-fixed bg-orange-700/60 bg-blend-darken h-160">
-                    <h1 class="flex justify-center text-center pt-60 font-semibold text-4xl text-white">О нашем
+                    <h2 class="flex justify-center text-center pt-60 font-semibold text-4xl text-white">О нашем
                         интернет-<br>магазине
-                    </h1>
+                    </h2>
                     <br>
                     <hr class="flex justify-center w-full text-white">
                     <br>
@@ -148,9 +203,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <section class="advantages mb-32">
             <div class="container mx-auto">
                 <div class="flex flex-wrap">
-                    <h1 class="font-light text-4xl leading-12 text-emerald-600 mt-5 ml-5 h-48">Почему <br> стоит
+                    <h2 class="font-light text-4xl leading-12 text-emerald-600 mt-5 ml-5 h-48">Почему <br> стоит
                         выбрать<br>
-                        наш интернет-<br>магазин</h1>
+                        наш интернет-<br>магазин</h2>
                     <div class="grid">
                         <div class="flex h-28 mb-24">
                             <div class="mt-5 ml-5 flex mx-auto">
@@ -208,7 +263,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
             </div>
         </section>
-        <section class="otziv">
+        <article class="otziv">
             <div class="container mx-auto">
                 <h1 class="flex justify-center text-center font-semibold text-2xl mb-24">Отзывы о нашем
                     интернет-магазине
@@ -220,12 +275,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                         <!-- Slides -->
                         <div class="swiper-slide">
                             <div class="grid justify-center text-center">
-                                <h1 class="mb-5">Отличная продукция и качественное
+                                <h2 class="mb-5">Отличная продукция и качественное
                                     обслуживание.
                                     Быстрая <br>
                                     доставка и
                                     внимательный
-                                    персонал. Обязательно буду делать покупки здесь ещё!</h1>
+                                    персонал. Обязательно буду делать покупки здесь ещё!</h2>
                                 <div class="grid justify-center text-center">
                                     <img class="w-24 h-24 rounded-4xl relative left-4 mb-5"
                                         src="https://static.tildacdn.com/tild6137-3636-4363-b939-326166353736/petebellis224507_s.jpg"
@@ -236,12 +291,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                         </div>
                         <div class="swiper-slide">
                             <div class="grid justify-center text-center">
-                                <h1 class="mb-5">Отличная продукция и качественное
+                                <h2 class="mb-5">Отличная продукция и качественное
                                     обслуживание.
                                     Быстрая <br>
                                     доставка и
                                     внимательный
-                                    персонал. Обязательно буду делать покупки здесь ещё!</h1>
+                                    персонал. Обязательно буду делать покупки здесь ещё!</h2>
                                 <div class="grid justify-center text-center">
                                     <img class="w-24 h-24 rounded-4xl relative left-4 mb-5"
                                         src="https://static.tildacdn.com/tild6137-3636-4363-b939-326166353736/petebellis224507_s.jpg"
@@ -252,12 +307,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                         </div>
                         <div class="swiper-slide">
                             <div class="grid justify-center text-center">
-                                <h1 class="mb-5">Отличная продукция и качественное
+                                <h2 class="mb-5">Отличная продукция и качественное
                                     обслуживание.
                                     Быстрая <br>
                                     доставка и
                                     внимательный
-                                    персонал. Обязательно буду делать покупки здесь ещё!</h1>
+                                    персонал. Обязательно буду делать покупки здесь ещё!</h2>
                                 <div class="grid justify-center text-center">
                                     <img class="w-24 h-24 rounded-4xl relative left-4 mb-5"
                                         src="https://static.tildacdn.com/tild6137-3636-4363-b939-326166353736/petebellis224507_s.jpg"
@@ -277,20 +332,20 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
                 </div>
             </div>
-        </section>
-        <section class="faq">
-            <button type="submit" class="btn btn-primary font-bold">FAQ</button>
+        </article>
+        <article class="faq">
+            <!--<button onclick="openAlert()" type="submit" class="btn btn-primary font-bold">FAQ</button>
             <div class="hidden">
                 <ul class="list-group">
                     <li class="list-group-item active">№1</li>
                     <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
                 </ul>
-            </div>
-        </section>
+            </div>-->
+        </article>
         <section class="fidback mt-32 mb-32">
             <div class="container mx-auto">
                 <div class="grid justify-center text-center">
-                    <h1 class="text-4xl font-semibold">Контактная информация</h1>
+                    <h2 class="text-4xl font-semibold">Контактная информация</h2>
                     <br>
                     <p class="text-2xl">8 800 123-45-67<br>
                         info@example.ru</p>
@@ -326,16 +381,22 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </ul>
                     <br>
                     <div class="grid justify-center gap-1">
-                        <input class="mx-auto h-14 pl-5 bg-gray-200" placeholder="Электронная почта" type="" name=""
-                            value="">
-                        <br>
-                        <input class="mx-auto h-14 pl-5 bg-gray-200" placeholder="Имя" type="" name="" value="">
-                        <br>
-                        <input class="mx-auto h-24 pb-10 pl-5 bg-gray-200" placeholder="Сообщение" type="" name=""
-                            value="">
-                        <br>
-                        <button class="w-2xs h-16 rounded-2xl bg-orange-600 text-white font-bold">Связаться с
-                            нами</button>
+                        <form action="{{ route('fidbackstore') }}" method="post">
+                            @csrf
+                            <input class="mx-auto w-full h-14 pl-5 bg-gray-200" placeholder="Электронная почта"
+                                type="email" name="email" value="">
+                            <hr>
+                            <input class="mx-auto w-full h-14 pl-5 bg-gray-200" placeholder="Имя" type="text"
+                                name="name" value="">
+                            <hr>
+                            <textarea class="mx-auto w-full h-24 pb-10 pl-5 bg-gray-200" placeholder="Сообщение"
+                                name="message" value=""></textarea>
+                            <br>
+                            <button
+                                class="w-2xs h-16 rounded-2xl cursor-pointer bg-orange-600 text-white font-bold">Связаться
+                                с
+                                нами</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -343,10 +404,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     </main>
     @include('./include/footer')
 </body>
-<script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
-<script src=" https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 <script>
+//Попапы
 const FAQButton = document.querySelectorAll("button.font-bold");
 FAQButton.forEach(button => {
     button.addEventListener("click", () => {
@@ -354,6 +415,7 @@ FAQButton.forEach(button => {
     })
 })
 
+//Слайдеры
 const mySlider = new Splide('#mySlider', {
     gap: '30px',
     pagination: false,
@@ -384,6 +446,15 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+//Карусель
+const slides = document.querySelectorAll('.slide');
+
+slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+        slide.classList.toggle('active');
+    })
+})
 </script>
 
 </html>

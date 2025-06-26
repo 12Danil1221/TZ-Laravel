@@ -4,11 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Document</title>
     <style>
     li {
@@ -30,19 +25,19 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <div class="flex flex-wrap justify-around">
                     @foreach ($tovars as $el)
                     <div class="card mb-5">
-                        <img class="w-82 h-80 " src="{{ $el->img }}" alt="">
+                        <img class="w-82 h-80 " src="{{ asset('storage/'.$el->img) }}" alt="">
                         <h1 class="w-82 font-medium text-3xl leading-12">{{ $el->name }}</h1>
                         <p>{{ $el->categories }}</p>
-                        <p class="w-82">{{ $el->description }}</p>
+                        <p class="w-82">Описание: {{ $el->description }}</p>
                         <p>Цена: {{ $el->price }}</p>
 
                         <div class="grid mx-auto flex-wrap justify-around items-center">
                             <div class="flex mx-auto flex-wrap justify-around gap-5">
                                 <a href="{{ route('tovar-show',  $el->id) }}"
-                                    class="w-32 h-12 mt-5 pl-8 pr-8 bg-[#eb623c] text-white text-center font-semibold rounded-md">Просмотр
+                                    class="w-32 h-12 mt-5 pl-8 pr-8 bg-[#A8CFE3] text-white text-center font-semibold rounded-md">Просмотр
                                     товара</a>
                                 <a href="{{ route('tovar-edit',  $el->id) }}"
-                                    class="w-32 h-12 mt-5 pl-8 pr-8 bg-[#eb623c] text-white text-center font-semibold rounded-md">Изменить
+                                    class="w-32 h-12 mt-5 pl-8 pr-8 bg-[#A8CFE3] text-white text-center font-semibold rounded-md">Изменить
                                     товар</a>
                             </div>
                             <div class="flex mx-auto flex-wrap justify-around gap-5">
@@ -50,12 +45,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
-                                        class="w-32 h-11 mt-5 pl-8 pr-8 bg-[#eb623c] text-white font-semibold rounded-md">
+                                        class="w-32 h-11 mt-5 pl-8 pr-8 bg-[#A8CFE3] text-white font-semibold rounded-md">
                                         Удалить товар</button>
                                 </form>
 
                                 <button
-                                    class="w-32 h-11 mt-5 pl-8 pr-8 bg-[#eb623c] text-white font-semibold rounded-md">
+                                    class="w-32 h-11 mt-5 pl-8 pr-8 bg-[#A8CFE3] text-white font-semibold rounded-md">
                                     Купить</button>
                             </div>
                         </div>
@@ -68,8 +63,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     </main>
     @include('./include/footer')
 </body>
-<script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
-<script src=" https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 

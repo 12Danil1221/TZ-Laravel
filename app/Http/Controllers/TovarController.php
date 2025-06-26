@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Tovar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TovarController extends Controller
 {
@@ -33,14 +34,17 @@ class TovarController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'img'=>'required',
+        $tovar = $request->validate([
+            'img'=>'required|file',
             'name'=>'required',
             'categories'=>'required',
             'description'=>'required',
             'price'=>'required',
         ]);
-        $tovar = Tovar::create($request->all());
+
+        $tovar['img'] = Storage::disk('public')->put('images', $tovar['img']);
+
+        Tovar::create($tovar);
 
         return redirect()->route('tovar-all');
     }

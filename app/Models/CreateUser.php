@@ -11,8 +11,16 @@ class CreateUser extends Model
     use HasFactory;
 
         protected $fillable = [
+        'image',
+        'name',
+        'fullname',
+        'age',
         'email',
         'password',
         'gender',
+        'role'
+    ];
+    protected $hidden = [
+        'password'
     ];
 }

@@ -47,6 +47,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                             <p class="w-82">ФИО: {{ $el->FIO }}</p>
                             <div class="flex justify-start items-center">
                                 <p>Статус: {{ $el->status }}</p>
+                                @if(isset($_COOKIE['user_id']) && $user->role == 'admin')
                                 <form action="{{ route('orderupdate', $el->id) }}" method="post">
                                     @csrf
                                     @method('PUT')
@@ -57,10 +58,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                     <button type="submit"
                                         class="cursor-pointer w-32 h-10 ml-2 pl-2 pr-2 bg-[#eb623c] text-white font-semibold rounded-md">Завершен</button>
                                 </form>
+                                @endif
                             </div>
                             <p>Комментарий: {{ $el->comment }}</p>
                             <p>Количество: {{ $el->quantity }}</p>
-                            <p>Итоговая цена: {{ $el->price }}</p>
+                            <p>Итоговая цена: {{ $el->total_price }}</p>
                         </div>
                     </div>
                     @endforeach

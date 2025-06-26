@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('price');
             $table->string('status')->default('news');
             $table->text('comment');
+            $table->float('total_price')->nullable();
             $table->timestamps();
         });
     }
